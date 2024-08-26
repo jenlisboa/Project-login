@@ -2,40 +2,38 @@
 Green: #49a09d
 Lilac: #5f2c82
 */
-*{
+* {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
 
-body, html{
+body, html {
     background-color: #5f2c82;
     width: 100vw;
-    height: 100vw;
+    height: 100vh; /* Corrigido para usar 100vh em vez de 100vw */
 }
 
-main{
+main {
     position: relative;
     width: 100vw;
     height: 100vh;
 }
 
-section#login{
+section#login {
     position: absolute;
     top: 50%;
     left: 50%;
     overflow: hidden;
-
-    transform:translate(-50%, -50%) ;
+    transform: translate(-50%, -50%);
     background-color: white;
     width: 250px;
     height: 500px;
     border-radius: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.463);
-
-    transition: width .3s height .3s;
-    transition-timing-function: ease;
+    transition: width 0.3s ease, height 0.3s ease;
+   
 }
 
 section#login > div#image {
@@ -51,27 +49,50 @@ section#login > div#form {
     padding: 10px;
 }
 
-div#form > h1{
+div#form > h1 {
     text-align: center;
-    margin-bottom:10px ;
-
+    margin-bottom: 10px;
 }
 
-div#form > p{
+div#form > p {
     font-size: 0.8em;
 }
+
 form > div.field {
     background-color: #5f2c82;
-    display: block;
+    border: 2px solid #5f2c82;
     width: 100%;
     height: 50px;
-    border-radius: 5px;
-    margin:5px 0px ;
+    border-radius: 8px;
+    margin: 5px 0;
+    display: flex;
 }
-div.field > label{
+
+div.field > label {
     display: none;
 }
-form > input[type=submit]{
+
+div.field > span {
+    color: white;
+    font-size: 2em;
+    width: 40px;
+    padding: 5px;
+}
+
+div.field > input {
+    background-color: #68e0dc;
+    font: 1em Arial, sans-serif; 
+    width: calc(100% - 44px); 
+    height: 100%;  
+    border: 0;
+    border-radius: 8px;
+    padding: 4px;
+    box-sizing: border-box; 
+}
+div.field > input:focus-within{
+    background-color: white;
+}
+form > input[type=submit] {
     display: block;
     font-size: 1em;
     width: 100%;
@@ -82,10 +103,12 @@ form > input[type=submit]{
     border-radius: 5px;
     cursor: pointer;
 }
-form > input[type=submit]:hover{
+
+form > input[type=submit]:hover {
     background-color: #2a5f5d;
 }
-form > a.button{
+
+form > a.button {
     display: block;
     text-align: center;
     font-size: 1em;
@@ -97,9 +120,11 @@ form > a.button{
     border-radius: 7px;
     text-decoration: none;
 }
-form > a.button:hover{
+
+form > a.button:hover {
     background-color: #68e0dc;
 }
-form > a.button > span{
-    font: size 0.8em; ;
+
+form > a.button > span {
+    font-size: 0.8em; /* Corrigido para usar font-size */
 }
